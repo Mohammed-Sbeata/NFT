@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from "axios";
 
 const Signup = () => {
     const initialState = {
@@ -9,8 +10,14 @@ const Signup = () => {
     }
     const [formData, setFormData] = useState(initialState)
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+       try {
+         await axios.post('/api/signup',formData)
+             .then((response) => setFormData(response.data))
+       } catch(error) {
+        console.log(error);
+       }
     }
 
     const handleChange = (e) => {

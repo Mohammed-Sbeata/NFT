@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import SignUp from './routes/Signup'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-   <h1>Micrwave</h1>
+<React.StrictMode>
+   <SignUp />
   </React.StrictMode>,
 )

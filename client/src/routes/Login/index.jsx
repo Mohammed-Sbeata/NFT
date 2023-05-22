@@ -24,13 +24,14 @@ const Login = () => {
         event.preventDefault()
        try {
          const response = await axios.post('/api/login',formData)
-            
+         location.href = '/'
+
         } catch (err) {
+            console.log(err);
             setError(err);
     }
     }
 
-    if(error)  return `Error: ${error.message}`
 
     return (
         <div className="container">
@@ -55,7 +56,7 @@ const Login = () => {
                     </div>
                     <button className="btn">Log In</button>
                 </form>
-
+                <p>{error && `Error: ${error.message}`}</p>
             </div>
         </div>
     )

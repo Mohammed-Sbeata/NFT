@@ -27,7 +27,7 @@ const Signup = () => {
         event.preventDefault()
        try {
          const response = await axios.post('/api/signup',formData)
-            
+        location.href = '/'
         } catch (err) {
             setError(err);
     }

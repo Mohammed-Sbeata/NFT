@@ -5,3 +5,4 @@ const signRouter = Router();
 
 signRouter.post('/api/signup', signup);
 
+module.exports = signRouter;

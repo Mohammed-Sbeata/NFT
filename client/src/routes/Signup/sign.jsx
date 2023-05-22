@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios";
+import "./sign.css"
 
 const Signup = () => {
     const initialState = {

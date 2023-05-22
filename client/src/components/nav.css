@@ -1,0 +1,146 @@
+/* started handle Nav bar  */
+nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  height: 68px;
+  margin: 0 8rem;
+  border-bottom: 0.1px solid #2196f330;
+  justify-content: space-between;
+}
+
+.name {
+  display: flex;
+  gap: 0.2rem;
+}
+
+nft {
+  outline: 1px solid #441919;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #181c2a;
+  display: flex;
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: crimson;
+  position: relative;
+  font-size: xx-large;
+  animation: viper 5s ease infinite;
+}
+
+@keyframes viper {
+  10%,
+  20% {
+    transform: rotate(-2deg);
+  }
+
+  30%,
+  70%,
+  90% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+nft::before {
+  content: " ";
+  background-image: linear-gradient(0deg, transparent, #ff6464, transparent);
+  width: 2px;
+  height: 50%;
+  display: block;
+  position: absolute;
+  right: 0;
+  animation: rocket 3s 1s infinite ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+
+@keyframes rocket {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+
+  50% {
+    top: 70%;
+
+    opacity: 0.2;
+  }
+}
+
+nft::after {
+  content: " ";
+  background-image: linear-gradient(270deg, transparent, #ff6464, transparent);
+  width: 50%;
+  height: 1.5px;
+  display: block;
+  position: absolute;
+  top: 0;
+  animation: border-top 4s 3s infinite linear;
+  opacity: 0;
+}
+
+@keyframes border-top {
+  0% {
+    opacity: 1;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 0.2;
+    left: 68%;
+  }
+}
+
+/* .fa-cart-shopping {
+  height: 40px;
+  width: 40px;
+  color: #2196f3;
+  background: linear-gradient(45deg, #2b3d74, transparent);
+  position: relative;
+  border-radius: 29%;
+  border-right: 0.1px solid #036ff463;
+  border-top: 0.1px solid #036ff496;
+  cursor: pointer;
+} */
+.fa-cart-shopping {
+  height: 40px;
+  width: 40px;
+  color: #fff1f1;
+  background: linear-gradient(45deg, #bb3c3c, transparent);
+  position: relative;
+  border-radius: 29%;
+  cursor: pointer;
+  box-shadow: 0 15px 25px -4px #a42a2a08, inset 0 -3px 4px -1px #580707,
+    0 9px 55px -1px #47349f, inset 0 3px 4px -1px #b53f3f,
+    inset 0 0 5px 1px #b73a3a, inset 0 20px 30px 0 #b53f3f;
+  z-index: 1;
+}
+
+.fa-cart-shopping:before {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+hell {
+  letter-spacing: -1px;
+  font-size: 2.5em;
+  color: #424de4;
+}
+/* end handle Nav bar  */

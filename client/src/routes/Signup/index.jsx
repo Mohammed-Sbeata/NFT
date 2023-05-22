@@ -26,7 +26,7 @@ const Signup = () => {
         event.preventDefault()
        try {
          const response = await axios.post('/api/signup',formData)
-            setFormData(response.data)
+            
         } catch (err) {
             setError(err);
     }

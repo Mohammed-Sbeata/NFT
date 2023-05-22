@@ -5,9 +5,9 @@ CREATE TABLE users(
     id BIGSERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(50) NOT NULL,
+    password TEXT NOT NULL,
     image TEXT,
-    budget NUMERIC(10,2) NOT NULL
+    budget NUMERIC(10,2) 
 );
 CREATE TABLE products(
     id BIGSERIAL PRIMARY KEY,

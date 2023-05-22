@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Pool } from 'pg';
+const { Pool } = require('pg');
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('dotenv').config();
 
@@ -29,5 +29,4 @@ const options = {
 };
 
 const connection = new Pool(options);
-
-export default connection;
+module.exports = connection;

@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Index from "./routes/landingPage/Index";
-import Signup from "./routes/Signup/signUp";
-// import Login from "./routes/Login/index";
+import Signup from "./routes/Signup/Signup";
+import Login from "./routes/Login/index";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 const router = createBrowserRouter([
@@ -14,10 +14,10 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <Signup />,
   },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
+  {
+    path: "/login",
+    element: <Login />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

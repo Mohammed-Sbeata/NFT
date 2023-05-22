@@ -28,7 +28,6 @@ const Signup = () => {
       await axios.post("/api/signup", formData);
       location.href = "/";
     } catch (err) {
-      console.log(err);
       setError(err);
     }
   };

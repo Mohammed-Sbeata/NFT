@@ -22,21 +22,21 @@ body {
   background-image: linear-gradient(180deg, #9a1574, #3f51b5, #000212);
   background-size: cover;
   background-attachment: fixed;
-  min-width: 100wh;
+  min-width: 100vh;
   margin-bottom: 2rem;
   font-family: "Barlow Semi Condensed", sans-serif;
   color: aliceblue;
 }
 
-app {
+.app {
   font-family: "Baloo 2", cursive;
   position: absolute;
-  left: 50%;
-  top: 44px;
-  transform: translate(-50%, -50%);
+  left: 0;
+  width: 100vw;
+  top: 0;
   font-weight: 700;
   color: cornflowerblue;
-  font-size: xx-large;
+  font-size: x-large;
 }
 input {
   border: none;

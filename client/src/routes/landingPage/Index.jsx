@@ -7,7 +7,7 @@ import Main from "../../components/Main";
 
 const Index = () => {
   return (
-    <div className="App">
+    <div className="app">
       <Nav />
       <Header />
       <Main />

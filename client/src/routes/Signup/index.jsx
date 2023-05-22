@@ -9,20 +9,10 @@ const Signup = () => {
         confirmPassword: "",
     }
     const [formData, setFormData] = useState(initialState)
-
-    const handleSubmit = async (event) => {
-        event.preventDefault()
-       try {
-         await axios.post('/api/signup',formData)
-             .then((response) => setFormData(response.data))
-       } catch(error) {
-        console.log(error);
-       }
-    }
+    const [error, setError] = useState(null);
 
     const handleChange = (e) => {
         const { value, name } = e.target;
-
         setFormData((prevFormData) => {
             return {
                 ...prevFormData,
@@ -30,6 +20,20 @@ const Signup = () => {
             }
         })
     }
+    
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+       try {
+         const response = await axios.post('/api/signup',formData)
+            setFormData(response.data)
+        } catch (err) {
+            setError(err);
+    }
+    }
+
+    if(error)  return `Error: ${error.message}`
+
     return (
         <div className="container">
             <div className="login-box">

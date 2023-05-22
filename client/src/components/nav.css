@@ -138,9 +138,4 @@ nft::after {
   transform: translate(50%, -50%);
 }
 
-hell {
-  letter-spacing: -1px;
-  font-size: 2.5em;
-  color: #424de4;
-}
 /* end handle Nav bar  */

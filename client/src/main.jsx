@@ -5,11 +5,11 @@ import Signup from './routes/Signup/sign'
 import Login from './routes/Login/index'
 
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Index />
+    path: "/",
+    element: <Index />,
   },
   {
     path: '/signup',
@@ -22,9 +22,13 @@ const router = createBrowserRouter([
 
   }
 ])
+    path: "/signup",
+    element: <Signup />,
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

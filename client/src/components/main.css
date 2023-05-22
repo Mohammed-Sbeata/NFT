@@ -12,8 +12,8 @@ main {
 }
 
 .card {
-  width: 224px;
-  height: 365px;
+  width: 263px;
+  height: 426px;
   padding: 17px;
   background: linear-gradient(
     161.11deg,
@@ -63,4 +63,5 @@ label {
 
 span {
   color: #26deff;
+  font-size: 1.1rem;
 }

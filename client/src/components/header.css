@@ -1,0 +1,21 @@
+.parent-vd {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.parent-vd1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+video {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  filter: hue-rotate(43deg);
+}

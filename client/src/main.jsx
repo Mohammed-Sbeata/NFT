@@ -1,18 +1,13 @@
-<<<<<<< HEAD
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Signup from './routes/Signup/sign'
-import Index from './routes/landingPage/Index'
-=======
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Index from "./routes/landingPage/Index";
-import Signup from "./routes/Signup/Signup";
+import Signup from "./routes/Signup/";
 import Login from "./routes/Login/index";
->>>>>>> main
-
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Cart from './routes/Carts/Cart'
+import CartProduct from "./routes/Cart";
+import './main.css'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,16 +18,13 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
-<<<<<<< HEAD
-    path: '/carts',
-    element: <Cart />
-
-  }
-=======
     path: "/login",
     element: <Login />,
   },
->>>>>>> main
+  {
+    path:'/cart',
+    element:<CartProduct />
+  }
 ]);
 
 

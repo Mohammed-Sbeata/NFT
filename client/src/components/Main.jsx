@@ -21,6 +21,7 @@ const Main = ({ data }) => {
               <span>150 USD</span>
             </left>
           </description>
+          <i className="fa-solid fa-heart"></i>
         </div>
       ))}
     </main>

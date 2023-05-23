@@ -2,12 +2,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Index from "./routes/landingPage/Index";
 import Sign from "./routes/Signup/sign";
 import Login from "./routes/Login/index";
 import Products from "./routes/production/Products";
-
+import CartProduct from "./routes/Cart";
 import Cart from "./routes/Carts/Cart";
+import Index from "./routes/landingPage/Index";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/main",
     element: <Products />,
+  },
+  {
+    path: "/cart",
+    element: <CartProduct />,
   },
 ]);
 

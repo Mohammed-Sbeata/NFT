@@ -3,14 +3,12 @@
 import "./index.css";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
-import Main from "../../components/Main";
 
 const Index = () => {
   return (
     <div className="app">
       <Nav />
       <Header />
-      <Main />
     </div>
   );
 };

@@ -22,7 +22,6 @@ const Main = () => {
           </left>
         </discription>
       </div>
-      {/*  */}
       <div className="card">
         <img alt="image" src={img} />
         <name>

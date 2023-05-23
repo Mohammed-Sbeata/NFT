@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios";
-import "./sign.css"
+import "./signup.css"
 
 const Signup = () => {
     const initialState = {
@@ -34,8 +34,8 @@ const Signup = () => {
     }
 
     return (
-        <div className="container">
-            <div className="login-box">
+        <div className="container auth">
+            <div className="auth-box">
                 <h2>SignUp</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-box">

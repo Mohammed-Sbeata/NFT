@@ -3,7 +3,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  top: 104vh;
+  top: 8vh;
   left: 50%;
   transform: translateX(-50%);
   gap: 1rem;

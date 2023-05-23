@@ -15,11 +15,10 @@
 }
 
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
-  background-image: linear-gradient(180deg, #9a1574, #3f51b5, #000212);
+  background-image: linear-gradient(180deg, #4b1d3e, #101c5e, #36408d);
   background-size: cover;
   background-attachment: fixed;
   min-width: 100vh;
@@ -38,11 +37,4 @@ body {
   font-weight: 700;
   color: cornflowerblue;
   font-size: x-large;
-}
-input {
-  border: none;
-}
-
-input:focus-visible {
-  outline: none;
 }

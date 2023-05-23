@@ -1,44 +1,44 @@
 /* eslint-disable no-unused-vars */
-const bcrypt = require("bcrypt");
-const { loginSchema } = require("../../utils/validation");
-const getUserPassword = require("../../db/queries/getUserPassword");
-const { generateToken } = require("../../utils/jwt");
-require("dotenv").config();
+const bcrypt = require('bcrypt');
+const { loginSchema } = require('../../utils/validation');
+const getUserPassword = require('../../db/queries/getUserPassword');
+const { generateToken } = require('../../utils/jwt');
+require('dotenv').config();
 
 const login = (req, res, next) => {
   const { username, password } = req.body;
-  const { error, value } = loginSchema
+  loginSchema
     .validateAsync(
       {
         username,
         password,
       },
-      { abortEarly: false }
+      { abortEarly: false },
     )
     .then(() => getUserPassword(username))
     .then((data) => {
       if (data.rowCount) {
-        req.userdb = data.rows[0];
+        req.userid = data.rows[0].id;
         return data.rows[0].password;
       }
+      return res.status(401).json({ message: 'Wrong username or password' });
     })
     .then((hasedPassword) => bcrypt.compare(password, hasedPassword))
     .then((isMatch) => {
       if (!isMatch) {
-        console.log(isMatch);
-        return res.status(400).json({ message: "passwords not matched" });
+        return res.status(401).json({ message: 'Wrong username or password' });
       }
-      const { id, username } = req.userdb;
+      const id = req.userid;
       return { id, username };
     })
     .then((data) => generateToken(data))
     .then((token) => {
       res
-        .cookie("token", token)
+        .cookie('token', token)
         .status(201)
-        .json({ message: "Log successfully 👌" });
+        .json({ message: 'Log in successfully 👌' });
     })
-    .catch((err) => console.log(err));
+    .catch(() => res.status(401).json({ message: 'Wrong username or password' }));
 };
 
 module.exports = login;

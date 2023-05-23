@@ -10,7 +10,7 @@ const Signup = () => {
         confirmPassword: "",
     }
     const [formData, setFormData] = useState(initialState)
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         const { value, name } = e.target;
@@ -21,19 +21,17 @@ const Signup = () => {
             }
         })
     }
-    
+
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-       try {
-         const response = await axios.post('/api/signup',formData)
-        location.href = '/'
-        } catch (err) {
-            setError(err);
+        try {
+            await axios.post('/api/signup', formData)
+            location.href = '/'
+        } catch (error) {
+            setError(error.response.data.message);
+        }
     }
-    }
-
-    if(error)  return `Error: ${error.message}`
 
     return (
         <div className="container">
@@ -72,7 +70,7 @@ const Signup = () => {
                     </div>
                     <button className="btn">Sign Up</button>
                 </form>
-
+                <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>
             </div>
         </div>
     )

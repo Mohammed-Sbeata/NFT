@@ -1,47 +1,43 @@
-/* eslint-disable no-unused-vars */
 const bcrypt = require('bcrypt');
 const { loginSchema } = require('../../utils/validation');
 const getUserPassword = require('../../db/queries/getUserPassword');
 const { generateToken } = require('../../utils/jwt');
 require('dotenv').config();
 
-const login = async (req, res, next) => {
-  try {
-    const { username, password } = req.body;
-
-    await loginSchema.validateAsync(
+const login = (req, res) => {
+  const { username, password } = req.body;
+  loginSchema
+    .validateAsync(
       {
         username,
         password,
       },
-      { abortEarly: false }
-    );
-
-    const data = await getUserPassword(username);
-
-    if (data.rowCount) {
-      const storedPassword = data.rows[0].password;
-
-      const isMatch = await bcrypt.compare(password, storedPassword);
-
-      if (!isMatch) {
-        return res.status(400).json({ message: 'Passwords do not match' });
+      { abortEarly: false },
+    )
+    .then(() => getUserPassword(username))
+    .then((data) => {
+      if (data.rowCount) {
+        req.userid = data.rows[0].id;
+        return data.rows[0].password;
       }
-
-      const { id, username: storedUsername } = data.rows[0];
-
-      const token = generateToken({ id, username: storedUsername });
-
+      return res.status(401).json({ message: 'Wrong username or password' });
+    })
+    .then((hasedPassword) => bcrypt.compare(password, hasedPassword))
+    .then((isMatch) => {
+      if (!isMatch) {
+        return res.status(401).json({ message: 'Wrong username or password' });
+      }
+      const id = req.userid;
+      return { id, username };
+    })
+    .then((data) => generateToken(data))
+    .then((token) => {
       res
         .cookie('token', token)
-        .status(200)
-        .json({ message: 'Login successful 👌' });
-    } else {
-      res.status(400).json({ message: 'User not found' });
-    }
-  } catch (err) {
-    next(err);
-  }
+        .status(201)
+        .json({ message: 'Log in successfully 👌' });
+    })
+    .catch(() => res.status(401).json({ message: 'Wrong username or password' }));
 };
 
 module.exports = login;

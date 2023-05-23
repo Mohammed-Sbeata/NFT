@@ -7,7 +7,7 @@ const Login = () => {
         password: "",
     }
     const [formData, setFormData] = useState(initialState)
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         const { value, name } = e.target;
@@ -18,20 +18,17 @@ const Login = () => {
             }
         })
     }
-    
+
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-       try {
-         const response = await axios.post('/api/login',formData)
-         location.href = '/'
-
-        } catch (err) {
-            console.log(err);
-            setError(err);
+        try {
+            await axios.post('/api/login', formData)
+            location.href = '/'
+        } catch (error) {
+            setError(error.response.data.message);
+        }
     }
-    }
-
 
     return (
         <div className="container">
@@ -56,7 +53,7 @@ const Login = () => {
                     </div>
                     <button className="btn">Log In</button>
                 </form>
-                <p>{error && `Error: ${error.message}`}</p>
+                <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>
             </div>
         </div>
     )

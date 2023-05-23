@@ -3,9 +3,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Index from "./routes/landingPage/Index";
-import Signup from "./routes/Signup/Signup";
+import Sign from "./routes/Signup/sign";
 import Login from "./routes/Login/index";
 import Products from "./routes/production/Products";
+
+import Cart from "./routes/Carts/Cart";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,12 +15,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <Signup />,
+    element: <Sign />,
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: "/carts",
+    element: <Cart />,
   },
+  { path: "/login", element: <Login /> },
   {
     path: "/main",
     element: <Products />,

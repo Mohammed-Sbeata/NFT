@@ -1,27 +1,28 @@
 import "./main.css";
-import img from "../assets/images/2aa457150547103.62fc32b4e21a7.jpg";
 import certified from "../assets/images/certified.png";
 
-const Main = () => {
+const Main = ({ data }) => {
   return (
     <main>
-      <div className="card">
-        <img alt="image" src={img} />
-        <name>
-          Wellcome to title
-          <img className="certified" src={certified} />
-        </name>
-        <discription>
-          <right>
-            <label>Volume</label>
-            <span>13M USD</span>
-          </right>
-          <left>
-            <label>Floor Price</label>
-            <span>150 USD</span>
-          </left>
-        </discription>
-      </div>
+      {data.map((obj) => (
+        <div className="card" key={obj.id}>
+          <img alt="image" src={obj.image} />
+          <name>
+            {obj.title}
+            <img className="certified" src={certified} alt="certified" />
+          </name>
+          <description>
+            <right>
+              <label>Volume </label>
+              <span>{+obj.price}M USD</span>
+            </right>
+            <left>
+              <label>Floor Price </label>
+              <span>150 USD</span>
+            </left>
+          </description>
+        </div>
+      ))}
     </main>
   );
 };

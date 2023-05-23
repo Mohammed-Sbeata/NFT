@@ -7,7 +7,8 @@ CREATE TABLE users(
     email VARCHAR(50) NOT NULL UNIQUE,
     password TEXT NOT NULL,
     image TEXT,
-    budget NUMERIC(10,2) 
+    budget NUMERIC(10,2),
+    role VARCHAR(10) NOT NULL DEFAULT 'user'
 );
 CREATE TABLE products(
     id BIGSERIAL PRIMARY KEY,

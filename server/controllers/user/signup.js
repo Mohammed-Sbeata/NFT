@@ -23,7 +23,7 @@ const signup = (req, res) => {
     .then((hash) => userSignupQuery({ username, email, password: hash }))
     .then((data) => {
       const { id } = data.rows[0];
-      return { id, username };
+      return { id, username, role: 'user' };
     })
     .then((data) => generateToken(data))
     .then((token) => {

@@ -9,7 +9,6 @@ const Nav = () => {
           <nft>F</nft>
           <nft>T</nft>
         </div>
-        {/* <hell>If you poor, close the site</hell> */}
         <i className="fa-solid fa-cart-shopping"></i>
       </nav>
     </>

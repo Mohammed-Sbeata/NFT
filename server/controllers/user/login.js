@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 const bcrypt = require('bcrypt');
 const { loginSchema } = require('../../utils/validation');
 const getUserPassword = require('../../db/queries/getUserPassword');
 const { generateToken } = require('../../utils/jwt');
 require('dotenv').config();
 
-const login = (req, res, next) => {
+const login = (req, res) => {
   const { username, password } = req.body;
   loginSchema
     .validateAsync(

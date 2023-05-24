@@ -17,7 +17,7 @@ const login = (req, res) => {
     .then(() => getUserPassword(username))
     .then((data) => {
       if (data.rowCount) {
-        req.userid = data.rows[0].id;
+        req.userData = data.rows[0];
         return data.rows[0].password;
       }
       return res.status(401).json({ message: 'Wrong username or password' });
@@ -27,8 +27,8 @@ const login = (req, res) => {
       if (!isMatch) {
         return res.status(401).json({ message: 'Wrong username or password' });
       }
-      const id = req.userid;
-      return { id, username };
+      const { id, role } = req.userData;
+      return { id, username, role };
     })
     .then((data) => generateToken(data))
     .then((token) => {

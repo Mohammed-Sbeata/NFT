@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import cartImg from "../assets/images/044460150547103.62fc32b4dc2a0.jpg"
 import axios from "axios";
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);

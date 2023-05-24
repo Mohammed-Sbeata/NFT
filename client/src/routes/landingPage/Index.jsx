@@ -6,12 +6,12 @@ import Header from "../../components/Header";
 
 const Index = () => {
   return (
-      <div className="landing-body">
-        <div className="app">
-          <Nav />
-          <Header />
-        </div>
+    <div className="landing-body">
+      <div className="app">
+        <Nav type="mainPage" />
+        <Header />
       </div>
+    </div>
   );
 };
 

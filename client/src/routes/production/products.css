@@ -28,7 +28,7 @@ body {
   margin: 0;
 }
 
-.app {
+.products {
   font-family: "Baloo 2", cursive;
   position: absolute;
   left: 0;
@@ -37,4 +37,49 @@ body {
   font-weight: 700;
   color: cornflowerblue;
   font-size: x-large;
+}
+
+.products main {
+  position: relative;
+  top: 0;
+}
+
+.products .add-product {
+  position: relative;
+  z-index: 10000;
+  text-align: center;
+}
+.products .add-product button  {
+  cursor: pointer;
+  user-select: none;
+  background-image: linear-gradient(180deg, #4b1d3e, #101c5e, #36408d);
+  padding: 6px 30px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.products .add-product form  {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: auto;
+  gap: 15px;
+}
+.products .add-product form input  {
+  padding: 9px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.products .add-product form input:focus  {
+  outline: none;
+}
+.products .add-product form button  {
+  width: fit-content;
+  margin: auto;
 }

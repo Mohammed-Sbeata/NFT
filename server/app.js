@@ -13,11 +13,6 @@ app.use(express.json());
 app.use(parser());
 app.disable('x-powered-by');
 
-// app.use((req, res, next) => {
-//   console.log(req.url);
-//   console.log(req.method);
-//   next();
-// });
 app.use('/api', userRouter);
 
 app.use('/api', productRouter);

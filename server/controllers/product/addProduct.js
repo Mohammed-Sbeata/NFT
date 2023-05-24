@@ -4,8 +4,11 @@ const addProduct = (req, res) => {
   const { title, image, price } = req.body;
 
   addProductQuery(title, image, price)
-    .then(() => res.json({ message: 'add product success' }))
-    .catch(() => res.status(401).json({ message: 'something went wrong' }));
+    .then((data) => res.json({ message: 'add product success', data: data.rows[0] }))
+    .catch((err) => {
+      console.log(err);
+      res.status(401).json({ message: 'something went wrong' })
+    });
 };
 
 module.exports = addProduct;

@@ -1,20 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;900&display=swap");
-/* font-family: "Barlow Semi Condensed", sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap");
-/* font-family: 'Baloo 2', cursive; */
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background-color: #272525;
-}
 
-::-webkit-scrollbar-thumb {
-  background-color: #140b46;
-}
-
-body {
+.landing-body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,10 +11,11 @@ body {
   min-width: 100vh;
   margin-bottom: 2rem;
   font-family: "Barlow Semi Condensed", sans-serif;
-  color: aliceblue;
+  padding: 0;
+  margin: 0;
 }
 
-.app {
+.landing-body .app {
   font-family: "Baloo 2", cursive;
   position: absolute;
   left: 0;
@@ -37,11 +24,4 @@ body {
   font-weight: 700;
   color: cornflowerblue;
   font-size: x-large;
-}
-input {
-  border: none;
-}
-
-input:focus-visible {
-  outline: none;
 }

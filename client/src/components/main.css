@@ -76,6 +76,7 @@ span {
   font-size: 1.2rem;
   border-radius: 28%;
   color: aliceblue;
+  cursor: pointer;
 }
 .like {
   color: crimson;

@@ -1,10 +1,40 @@
+import { useState, useEffect } from "react";
 import "./main.css";
 import certified from "../assets/images/certified.png";
+import axios from "axios";
 
 const Main = ({ data }) => {
+  const [cartData, setCartData] = useState([]);
+
+  useEffect(() => {
+    setCartData(data);
+  }, [data]);
+
+  console.log(cartData);
+  const changeLike = async (id) => {
+    try {
+      const response = await axios.post("/api/postCart", { id });
+      const updatedData = response.data.data;
+      console.log(updatedData);
+      setCartData((prevData) =>
+        prevData.map((obj) => {
+          if (obj.id === id) {
+            return {
+              ...obj,
+              likes: updatedData[0].likes,
+            };
+          }
+          return obj;
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <main>
-      {data.map((obj) => (
+      {cartData.map((obj) => (
         <div className="card" key={obj.id}>
           <img alt="image" src={obj.image} />
           <name>
@@ -21,7 +51,14 @@ const Main = ({ data }) => {
               <span>150 USD</span>
             </left>
           </description>
-          <i className="fa-solid fa-heart"></i>
+          <i
+            className={
+              obj.likes === "true"
+                ? "fa-solid fa-heart like"
+                : "fa-solid fa-heart"
+            }
+            onClick={() => changeLike(obj.id)}
+          ></i>
         </div>
       ))}
     </main>

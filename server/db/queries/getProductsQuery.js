@@ -1,9 +1,12 @@
 const connection = require('../config/connection');
 
-const getAllPostsQuery = () => {
-    const sql = {
-        text: 'SELECT p.*, c.likes FROM products p LEFT JOIN cart c ON p.id = c.productId AND c.userId = 2;',
-    }
-    return connection.query(sql);
-}
+const getAllPostsQuery = (userId) => {
+  const sql = {
+    text: `select products.*, likes
+    from products left join cart
+    on products.id = cart.productId and cart.userId = $1;`,
+    values: [userId],
+  };
+  return connection.query(sql);
+};
 module.exports = getAllPostsQuery;

@@ -5,11 +5,9 @@ const updateCartQuery = require('../../db/queries/cart/updateCartQuery');
 const postCart = (req, res, next) => {
   const userId = req.user.id;
   const productId = req.body.id;
-  console.log(userId, productId, 'iddd');
 
   checkLikeQuery(userId, productId)
     .then((data) => {
-      console.log(data.rows, 'rows');
       if (data.rows.length) {
         if (data.rows[0].likes !== 'true') {
           return updateCartQuery(userId, productId, 'true');

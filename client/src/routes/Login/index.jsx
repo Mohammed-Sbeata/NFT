@@ -24,7 +24,7 @@ const Login = () => {
         event.preventDefault()
         try {
             await axios.post('/api/login', formData)
-            location.href = '/'
+            location.href = '/main'
         } catch (error) {
             setError(error.response.data.message);
         }

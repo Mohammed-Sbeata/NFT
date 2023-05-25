@@ -3,7 +3,6 @@ const deleteCartQuery = require('../../db/queries/cart/deleteCartQuery');
 const deleteCart = (req, res, next) => {
   const { id } = req.params;
   const userId = req.user.id;
-  console.log(userId, id,"kddddddddddddddd");
   deleteCartQuery(userId, id)
     .then(() => {
       res.status(200).json({

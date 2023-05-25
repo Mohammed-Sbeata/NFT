@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 import Sign from "./routes/Signup/sign";
 import Login from "./routes/Login/index";
 import Products from "./routes/production/Products";
-import CartProduct from "./routes/Cart";
+import CartProduct from "./routes/Cart/CartProduct";
 import Index from "./routes/landingPage/Index";
 
 const router = createBrowserRouter([

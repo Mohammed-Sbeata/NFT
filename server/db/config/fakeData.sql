@@ -2,7 +2,7 @@ BEGIN;
 
 INSERT INTO users ( username, email, password) 
 VALUES
-    ('nour','nour@gmail.com','123465789');
+    ('nouragha','nour@gmail.com','123465789');
 
 INSERT INTO products (userId, title, image, price) 
 VALUES

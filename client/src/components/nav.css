@@ -106,17 +106,21 @@ nft::after {
   }
 }
 
-/* .fa-cart-shopping {
-  height: 40px;
-  width: 40px;
-  color: #2196f3;
-  background: linear-gradient(45deg, #2b3d74, transparent);
+.main {
+  height: 45px;
+  width: 45px;
+  color: #dc143c;
+  background: linear-gradient(45deg, #181c2a, transparent);
   position: relative;
-  border-radius: 29%;
-  border-right: 0.1px solid #036ff463;
-  border-top: 0.1px solid #036ff496;
+  border-radius: 16%;
+  border-right: 2.1px solid #f4030363;
+  border-top: 0.1px solid #f4030396;
   cursor: pointer;
-} */
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .fa-cart-shopping {
   height: 40px;
   width: 40px;

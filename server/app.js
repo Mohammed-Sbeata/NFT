@@ -9,7 +9,7 @@ const productRouter = require('./routes/productRouter');
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 const app = express();
-app.set('PORT', process.env.PORT || 3000);
+app.set('PORT', process.env.PORT || 5555);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(parser());

@@ -10,6 +10,12 @@ const Nav = ({ type }) => {
           <nft>F</nft>
           <nft>T</nft>
         </div>
+        {type !== "mainPage" ?
+           <div className="logout">
+             <Link to="/" className="btn">Logout</Link>
+            </div>
+        :
+        <></>}
         {type === "mainPage" ? (
           <div className="sign">
             <Link to="/login" className="button">
@@ -19,8 +25,9 @@ const Nav = ({ type }) => {
               <span></span> sign in
             </Link>
             <Link to="/signup" className="btn">
-              sign un
+              sign up
             </Link>
+            
           </div>
         ) : type === "cart" ? (
           <Link to="/main" className="fa-solid fa-igloo main"></Link>

@@ -282,4 +282,8 @@ nft::after {
   align-items: center;
   gap: 0.5rem;
 }
+.logout{
+  position: absolute;
+  right: 10px;
+}
 /* end handle Nav bar  */

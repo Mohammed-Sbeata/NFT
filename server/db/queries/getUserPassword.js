@@ -1,7 +1,7 @@
 const connection = require('../config/connection');
 
 const getUserPassword = (username) => {
-  sql = {
+  const sql = {
     text: 'SELECT id, username, password, role  FROM users WHERE username = $1;',
     values: [username],
   };

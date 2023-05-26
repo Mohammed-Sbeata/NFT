@@ -41,12 +41,12 @@ const Products = () => {
     <div className="app products">
       <Nav />
       <div className="add-product">
-        {role === 'admin' && <button onClick={() => setShowForm(!showForm)}>{showForm ? 'Hide' : 'Show'} Add Product</button>}
+        {role === 'admin' && <button onClick={() => setShowForm(!showForm)}>{showForm ? 'Hide' : 'Show'} Add NFT</button>}
         {showForm && <form onSubmit={handleSubmit}>
             <input type="text" name='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder="NFT Title"/>
             <input type="text" name='image' value={image} onChange={(e) => setImage(e.target.value)} placeholder="NFT Image"/>
             <input type="text" name='price' value={price} onChange={(e) => setPrice(e.target.value)} placeholder="NFT price"/>
-            <button type="submit">Add Product</button>
+            <button type="submit">Add NFT</button>
           </form>}
       </div>
       <Main data={data} />

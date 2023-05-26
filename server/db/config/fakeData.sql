@@ -1,9 +1,5 @@
 BEGIN;
 
-INSERT INTO users ( username, email, password) 
-VALUES
-    ('nouragha','nour@gmail.com','123465789');
-
 INSERT INTO products (title, image, price) 
 VALUES
     ('Photo 1','https://scontent.fgza2-3.fna.fbcdn.net/v/t39.30808-6/347251588_1090372561921191_96724510624296027_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=UYOE8y9yei8AX8kS6z0&_nc_ht=scontent.fgza2-3.fna&oh=00_AfAtwFY5ZzGAEJTdOyPn0d7BzfGlNTCD1BNp4WHjnVp4zg&oe=6470ED74',100),

@@ -1,11 +1,11 @@
 const connection = require('../config/connection');
 
-const addProductQuery = (title, image, price, userId) => {
+const addProductQuery = (title, image, price) => {
   const sql = {
     text: `
-    INSERT INTO products (title, image, price, userId) VALUES ($1, $2, $3, $4) RETURNING *;
+    INSERT INTO products (title, image, price) VALUES ($1, $2, $3) RETURNING *;
     `,
-    values: [title, image, price, userId],
+    values: [title, image, price],
   };
   return connection.query(sql);
 };

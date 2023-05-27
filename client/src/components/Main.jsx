@@ -10,12 +10,10 @@ const Main = ({ data }) => {
     setCartData(data);
   }, [data]);
 
-  console.log(cartData);
   const changeLike = async (id) => {
     try {
       const response = await axios.post("/api/postCart", { id });
       const updatedData = response.data.data;
-      console.log(updatedData);
       setCartData((prevData) =>
         prevData.map((obj) => {
           if (obj.id === id) {

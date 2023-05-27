@@ -1,0 +1,16 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+.pagination span {
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.pagination span.active {
+  text-decoration: underline;
+  margin-top: -10px;
+}

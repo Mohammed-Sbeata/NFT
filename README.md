@@ -36,11 +36,3 @@
 - Postgresql
 - NPM packages
 
----
-
-## This app is presented to you by:
-
-- [Abeer Ayyad](https://github.com/abeerAyad)
-- [Basel AlSharif](https://github.com/Basel-01)
-- [Nour ALagha](https://github.com/Nour-Agha99)
-- [Mohammed Sbeata](https://github.com/Mohammed-Sbeata)
